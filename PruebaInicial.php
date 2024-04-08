@@ -1,0 +1,162 @@
+<?php
+    session_start();
+    $User=$_SESSION['datos']['Nit'];
+     if(!$User){
+		header("Location: index.html");
+	 }
+   else {
+        if (!empty($_POST['Tam']))
+        {
+             // 'Tam' trae la presentacion q se borra
+            //Borra_conteo($Fecha,$Xtam);
+            echo "Para Borrar";
+        }
+        else
+        {
+             // echo "Para Grabar";
+             Graba_conteo();
+        }
+    // Lista_Tamaños();
+   }
+    function Graba_conteo(){
+        require('Conexion.php');    
+        date_default_timezone_set('America/Bogota');
+        $time  = time();
+        $Fecha =strval(date("Y-m-d", $time));
+        $Hora  =strval(date("H:i:s", $time));
+        $User      = $_SESSION['datos']['Nit'];
+       
+		$Xcprese   = $_POST["Cprese"];
+		$Xcajas    = $_POST["Cajas"];
+		$XUnida    = $_POST["Uni"];
+		$Xtam      = $_POST["Tam"];
+
+        // echo "Para Grabar, " . 	$Xtam . "\n";
+        //echo "Cajas " .	$$Xcajas ;
+        /*
+        echo $_POST["Cprese"];
+        echo $_POST["Cajas"];
+        echo $_POST["Uni"];
+        */
+        if (!empty($Xcprese)){
+                      $Unicaja =UnicajaXCprese($_POST["Cprese"]);
+                       //echo 'Unicaja: ' . $Unicaja;
+                         $StockConteo=($XUnida/$Unicaja)+$Xcajas ;
+                          echo 'Conte : ' .$StockConteo;
+                      
+        } else {
+			          
+        }
+   }
+   function UnicajaXCprese($T){
+                      require('Conexion.php');
+                      $sql ="";
+                      $sql = "select Unicaja from categorias where codcat= '$T' ";
+		              $result=$mysqli->query($sql);
+		              $rows = $result->num_rows;
+                      $Unicaja=strval($row["Unicaja"]);
+               	      if($rows > 0) {
+			          $row = $result->fetch_assoc();
+                      $Unicaja=strval($row["Unicaja"]);
+                      }
+                      return $Unicaja;
+ }
+    function Lista_Tamaños(){
+                         require('Conexion.php');
+                         $sql = "select CodCat,categorias.Nombre as Cat,companias.NOMBRE as Comp from categorias inner join companias on categorias.CodComp=companias.ID";
+                         $result=$mysqli->query($sql);
+                         $rows = $result->num_rows;
+                         $Filas= $rows;
+                         $numero=0;
+			             $id=1;
+                         echo "<table style=width:30% BORDER CELLPADDING=6 CELLSPACING=0>";
+                         echo "<tr>";
+                         echo "<td> Cant </td><td>Categoria</td><td>Nombre</td><td>Distribuye</td>";
+                         echo " </tr> \n";
+                         if ($result = $mysqli->query($sql))
+                         {
+                            $row =0;
+                             while ($row = $result->fetch_assoc())
+                             {
+                                    echo "<tr>";
+			                        echo "<td width=\"1%\">" .	    $id .                "</td>";
+                                    echo "<td width=\"1%\">" .	    $row["CodCat"] .     "</td>";
+                                    echo "<td width=\"5%\">" .	    $row["Cat"] .     "</td>";
+                                    echo "<td width=\"5%\">" .	    $row["Comp"] .     "</td>";
+                                    echo "</tr>";
+				                    $id=$id+1;
+                             }
+
+                        }
+         echo "</table>";
+  }
+  
+  ?>
+  
+   <html>
+  <head>
+
+  <meta http-equiv="refresh" content="150">
+  <SCRIPT LANGUAGE="JavaScript">
+          function mi_alerta (b)
+           {
+                    var theForm = document.forms['form1'];
+                    // document.form1.Tam.value = "30";
+                    document.getElementById("Tam").value = b.id;
+                    //alert(b.id);
+                    theForm.submit();
+           }
+            function mi_alerta1 (c)
+           {
+                    var theForm = document.forms['form1'];
+                    // document.form1.Tam.value = "30";
+                    document.getElementById("Autoriza").value = c.id;
+                    //alert(b.id);
+                    theForm.submit();
+           }
+</SCRIPT>
+    <title>Grabacion de Conteo de Inventario</title>
+  </head>
+	<body>
+      <form  id="form1" name="form1"  action="PruebaInicial.php" method="post">
+        <table   style=width:40%  border=2>
+        <tr><td> Seleccione la Presentacion a Contar </td>
+        <td>
+         <select  name="Cprese">
+        <?php
+            require('Conexion.php');
+            date_default_timezone_set('America/Bogota');
+            $time  = time()-1;
+            $Fecha =strval(date("Y-m-d", $time));
+            $Fecha=date("Y-m-d",strtotime($Fecha."- 0 days"));
+            $sql = " SELECT T1.CODCAT as CODCAT,T1.NOMBRE as NOMBRE FROM categorias T1".
+                   " WHERE NOT EXISTS (SELECT  NULL  FROM web_reg_conteo T2  WHERE T1.CODCAT = T2.codigo and DATE_FORMAT( F_Creacion, '%Y-%m-%d')='$Fecha' and T2.estado=1)  AND (T1.SEGWEBF+T1.SEGWEBT)>'0' ".
+                   " ORDER BY T1.CODCAT";
+                         $result=$mysqli->query($sql);
+                         $rows = $result->num_rows;
+                         if ($result = $mysqli->query($sql)) { while ($row = $result->fetch_assoc()) { echo "<option value=".$row["CODCAT"].">"  .$row["CODCAT"]. '-' . $row["NOMBRE"]."</option>";  } }
+        ?>
+      </select>
+      </td>
+        </tr>
+          <tr>
+          <td>     <label for="inputPassword3" class="col-sm-2 control-label">Cantidad Contada  </label>                 </td>
+          <td>     <input type="number" class="form-control" name="Cajas" id="Cajas" placeholder="Cajas" required>       </td>
+        <tr>
+          <td>     <label for="inputPassword3" class="col-sm-2 control-label">Unidades Contadas</label>                  </td>
+          <td>     <input type="number" class="form-control"  name="Uni"   id="Uni"   placeholder="Unidades"   required>       </td>
+        <tr>
+          <td colspan=2 style="text-align:center;"> <input name="Consultar" type="submit" value="Grabar Conteo">     </td>
+                       <input id="Tam"      name="Tam"      type="hidden" value="">
+                       <input id="Autoriza" name="Autoriza" type="hidden" value="">
+        </tr>
+        </table>
+        
+              </form>
+  </body>
+  </html>
+
+
+  
+  
+ 
