@@ -16,26 +16,23 @@
 <body>
     <header>
         <img src="logo_blanco.png">
-        <h1>¡Bienvenido a la pagina de corporacion bnma!</h1>
+        <h1>CORPORACION BNMA</h1>
     </header>
-    <div id=inicioSesion>
-        <div id="texto">
-            <h1>Inicia sesión para continuar</h1>
+    <div class="firstSlide">
+        <div class="imagenes">
+            <img src="bn.jpg" class="imagen">
         </div>
-        <form action="login.php" method="POST">
-            <label for="laUsuario">USUARIO:</label>
-            <input type="text" id="usuario" name="usuario">
-            <label for="laContraseña">CONTRASEÑA:</label>
-            <input type="password" id="contraseña" name="contraseña">
-            <input type="submit" onclick="validarFormulario()"  value="ENVIAR" class="btn-enviar">
-        </form>
+        <div id=inicioSesion>
+            <h1>¡Bienvenido de nuevo!</h1>
+            <form action="login.php" method="POST">
+                <label for="laUsuario">USUARIO:</label>
+                <input type="text" id="usuario" name="usuario">
+                <label for="laContraseña">CONTRASEÑA:</label>
+                <input type="password" id="contraseña" name="contraseña">
+                <input type="submit" onclick="validarFormulario()" value="Enviar" class="btn-enviar">
+            </form>
+        </div>
     </div>
-    <div class="imagenes"> 
-        <img src="bn.jpg" class="imagen">
-        <img src="drinks.jpg" class="imagen">
-        <img src="drinks2.jpeg" class="imagen">
-    </div>
-
     <script src="index.js"></script>
 </body>
 
