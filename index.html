@@ -18,15 +18,16 @@
         <img src="/logo_blanco.png">
         <h1>¡Bienvenido a la pagina de corporacion bnma!</h1>
     </header>
-    <a href="PruebaInicial.php">Ir a prueba</a>
-    <div id=formulario>
+    <div id=inicioSesion>
         <div id="texto">
             <h1>Inicia sesión para continuar</h1>
         </div>
-        <form action="login.php" name="" method="POST">
-            <input type="text" name="usuario" placeholder="Ingresa tu usuario:" class="campo">
-            <input type="password" name="contraseña" placeholder="Ingresa tu contraseña:" class="campo">
-            <input type="submit" name="enviar" 0 value="enviar" class="btn-enviar">
+        <form id="formulario">
+            <label for="laUsuario">USUARIO:</label>
+            <input type="text" id="usuario">
+            <label for="laContraseña">CONTRASEÑA:</label>
+            <input type="password" id="contraseña">
+            <input type="submit" onclick = "validarFormulario()" value="ENVIAR" class="btn-enviar">
         </form>
     </div>
     <div class="imagenes"> 
@@ -34,6 +35,8 @@
         <img src="/drinks.jpg" class="imagen">
         <img src="/drinks2.jpeg" class="imagen">
     </div>
+
+    <script src="index.js"></script>
 </body>
 
 </html>
