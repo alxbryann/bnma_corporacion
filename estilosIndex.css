@@ -6,17 +6,13 @@
     padding: 0;
 }
 
-body {
-    background-color: black;
-}
-
 header {
+    margin-top: -2%;
     display: flex;
     width: 100%;
     height: 100px;
     justify-content: center;
-    overflow: hidden;
-    background-color: black;
+    background-color: red;
 }
 
 header h1 {
@@ -47,16 +43,25 @@ header img {
 .firstSlide {
     background-color: white;
     display: flex;
-}
-
-#inicioSesion {
-    width: 100%;
-    text-align: center;
     overflow: hidden;
 }
 
+#inicioSesion {
+    margin-left: 5%;
+    width: 100%;
+    text-align: center;
+    animation: fadein 2s both;
+}
+@keyframes fadein{
+    from{
+        transform: translateY(50%);
+    }
+    to{
+
+    }
+}
 #inicioSesion h1 {
-    margin-top: 8%;
+    margin-top: 10%;
     color: black;
     padding-top: 40px;
     scale: 140%;
@@ -98,14 +103,8 @@ form input {
     color: white;
     background-color: rgb(199, 58, 58);
 }
-
-.imagenes {
-    width: 70%;
-    overflow: hidden;
-}
-
-.imagen {
-    width: 100%;
+#carouselExampleAutoplaying{
+    width: 80%;
 }
 /*CONFIGURACION PORTATIL*/
 @media screen and (min-width:1000px) and (max-width:1600px) {
@@ -117,7 +116,7 @@ form input {
         height: 648px;
     }
     #inicioSesion h1{
-        margin-top: 5%;
+        margin-top: 3%;
     }
     form {
         display: grid;
@@ -146,11 +145,14 @@ form input {
         margin-top: 8%;
     }
     .firstSlide{
+        margin-left: -5%;
         display: grid;
     }
     #inicioSesion {
+        margin-left: 2.5%;
         width: 100%;
-        height: 520px;
+        height: 600px;
+        scale: 80%;
     }
     #inicioSesion h1{
         margin-top: 5%;
@@ -170,9 +172,8 @@ form input {
         margin-top: 8%;
         margin-bottom: 1%;
     }
-
-    .imagenes {
+    #carouselExampleAutoplaying{
+        margin: 0% 0%;
         width: 100%;
-        grid-template-columns: repeat(1, 1fr);
     }
 }
