@@ -52,14 +52,15 @@ header img {
     text-align: center;
     animation: fadein 2s both;
 }
-@keyframes fadein{
-    from{
+
+@keyframes fadein {
+    from {
         transform: translateY(50%);
     }
-    to{
 
-    }
+    to {}
 }
+
 #inicioSesion h1 {
     margin-top: 10%;
     color: black;
@@ -91,33 +92,46 @@ form input {
     margin: 10px;
 }
 
-.btn-enviar {
-    margin-top: 15%;
+form span{
+    margin: 0% 0%;
+    height: 30px;     
+}
+
+form .btn-enviar {
+    margin-top: 5%;
     color: white;
     background-color: red;
     transition: all 0.3s;
 }
 
 .btn-enviar:hover {
-    margin-top: 15%;
     color: white;
     background-color: rgb(199, 58, 58);
 }
-#carouselExampleAutoplaying{
+
+#carouselExampleAutoplaying {
     width: 80%;
 }
+
+.error {
+    color: red;
+}
+
 /*CONFIGURACION PORTATIL*/
 @media screen and (min-width:1000px) and (max-width:1600px) {
-    header h1{
+    header h1 {
         margin-top: 2%;
     }
+
     #inicioSesion {
         width: 80%;
         height: 648px;
     }
-    #inicioSesion h1{
+
+    #inicioSesion h1 {
         margin-top: 3%;
     }
+
     form {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -132,33 +146,38 @@ form input {
         margin-top: 8%;
         margin-bottom: 1%;
     }
-
-    .imagenes {
-        width: 80%;
-        grid-template-columns: repeat(1, 1fr);
+    
+    #carouselExampleAutoplaying {
+        margin: 0% 0%;
+        width: 100%;
     }
 
 }
+
 /*CONFIGURACION CELULAR*/
 @media screen and (max-width:800px) {
-    header h1{
+    header h1 {
         margin-top: 8%;
     }
-    .firstSlide{
+
+    .firstSlide {
         margin-left: -5%;
         display: grid;
     }
+
     #inicioSesion {
         margin-left: 2.5%;
         width: 100%;
         height: 600px;
         scale: 80%;
     }
-    #inicioSesion h1{
+
+    #inicioSesion h1 {
         margin-top: 5%;
     }
+
     form {
-        margin:0%;
+        margin: 0%;
         margin-top: 7%;
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -172,7 +191,8 @@ form input {
         margin-top: 8%;
         margin-bottom: 1%;
     }
-    #carouselExampleAutoplaying{
+
+    #carouselExampleAutoplaying {
         margin: 0% 0%;
         width: 100%;
     }

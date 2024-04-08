@@ -1,18 +1,28 @@
-var usuario = document.getElementById("usuario");
-var contraseña = document.getElementById("contraseña");
+const usernameField = document.querySelector("[name=usuario]");
+const passwordField = document.querySelector("[name=contraseña]");
+const buttonField = document.querySelector("[value=Enviar]");
 
 
-function validarFormulario(){
-
-    if(usuario.value === null || usuario.value === ""){
-        alert("Campo del usuario vacio");
-        return false;
+passwordField.addEventListener("blur", function (e) {
+    const field = e.target;
+    const fieldValue = e.target.value;
+    if (fieldValue.length === 0) {
+        field.nextElementSibling.innerText = "La contraseña es requerida";
     }
-
-    if(contraseña.value === null || contraseña.value === ""){
-        alert("Campo de contraseña vacio");
-        return false;
+    else {
+        field.nextElementSibling.innerText = "✔️";
     }
-    
-    return true;
+});
+function validationField() {
+
 }
+usernameField.addEventListener("blur", function (e) {
+    const field = e.target;
+    const fieldValue = e.target.value;
+    if (fieldValue.length === 0) {
+        field.nextElementSibling.innerText = "El nombre de usuario es requerido";
+    }
+    else {
+        field.nextElementSibling.innerText = "✔️";
+    }
+});
