@@ -116,6 +116,10 @@
            }
 </SCRIPT>
     <title>Conteo de Inventario</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
     <link rel="stylesheet" href="estilosphp.css">
     <link rel="icon" href="logo.png">
   </head>
@@ -125,11 +129,10 @@
       <h1>CORPORACION BNMA</h1>
     </header>
       <form  id="form1" name="form1"  action="PruebaInicial.php" method="POST">
-        <table>
-        <tr><td> Seleccione la Presentacion a Contar </td>
-        <td>
-        <select  name="Cprese">
-        <?php
+        <div id="contenedorSelect">
+          <label>SELECCIONA EL ITEM A CONTAR:</label>
+          <select  name="Cprese" class="select-perso">
+          <?php
             require('Conexion.php');
             date_default_timezone_set('America/Bogota');
             $time  = time()-1;
@@ -139,25 +142,22 @@
             " WHERE NOT EXISTS (SELECT  NULL  FROM web_reg_conteo T2  WHERE T1.CODCAT = T2.codigo and DATE_FORMAT( F_Creacion, '%Y-%m-%d')='$Fecha' and T2.estado=1)  AND (T1.SEGWEBF+T1.SEGWEBT)>'0' ".
             " ORDER BY T1.CODCAT";
             $result=$mysqli->query($sql);
-            $rows = $result->num_rows;
-        if ($result = $mysqli->query($sql)) { while ($row = $result->fetch_assoc()) { echo "<option value=".$row["CODCAT"].">"  .$row["CODCAT"]. '-' . $row["NOMBRE"]."</option>";  } }
-        ?>
-        </select>
-        </td>
-        </tr>
-          <tr>
-          <td>     <label for="Cajas" class="col-sm-2 control-label">cajas contada:</label></td>
-          <td>     <input type="number" class="form-control" name="Cajas" id="Cajas" placeholder="Cajas" required></td>
-        <tr>
-          <td>     <label for="Uni" class="col-sm-2 control-label">unidades contadas:</label></td>
-          <td>     <input type="number" class="form-control"  name="Uni"   id="Uni"  placeholder="Unidades"  required></td>
-        <tr>
-          <td colspan=2 style="text-align:center;"> <input name="Consultar" type="submit" value="Grabar Conteo" class="btn-enviar"></td>
-            <input id="Tam"      name="Tam"      type="hidden" value="">
-            <input id="Autoriza" name="Autoriza" type="hidden" value="">
-        </tr>
-        </table>
-        
-              </form>
+            $rows = $result->num_rows;  
+            if ($result = $mysqli->query($sql)) { while ($row = $result->fetch_assoc()) { echo "<option value=".$row["CODCAT"].">"  .$row["CODCAT"]. '-' . $row["NOMBRE"]."</option>";  } }
+          ?>
+          </select>
+        </div>
+        <div id="contenedorInput">
+          <label for="Cajas" class="col-sm-2 control-label">CAJAS CONTADAS:</label>
+          <input type="number" class="form-control" name="Cajas" id="Cajas" placeholder="Cajas" required>
+        </div>
+        <div id="contenedorInput">
+        <label for="Uni" class="col-sm-2 control-label">UNIDADES CONTADAS:</label>
+        <input type="number" class="form-control"  name="Uni"   id="Uni"  placeholder="Unidades"  required>
+        </div>
+          <label colspan=2 style="text-align:center;"> <input name="Consultar" type="submit" value="Grabar Conteo" class="btn-enviar"></label>
+          <input id="Tam"      name="Tam"      type="hidden" value="">
+          <input id="Autoriza" name="Autoriza" type="hidden" value="">
+      </form>
   </body>
   </html>
