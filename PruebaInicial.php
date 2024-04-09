@@ -142,17 +142,17 @@
             $rows = $result->num_rows;
         if ($result = $mysqli->query($sql)) { while ($row = $result->fetch_assoc()) { echo "<option value=".$row["CODCAT"].">"  .$row["CODCAT"]. '-' . $row["NOMBRE"]."</option>";  } }
         ?>
-      </select>
-      </td>
+        </select>
+        </td>
         </tr>
           <tr>
-          <td>     <label for="inputPassword3" class="col-sm-2 control-label">Cantidad Contada  </label>                 </td>
-          <td>     <input type="number" class="form-control" name="Cajas" id="Cajas" placeholder="Cajas" required>       </td>
+          <td>     <label for="Cajas" class="col-sm-2 control-label">cajas contada:</label></td>
+          <td>     <input type="number" class="form-control" name="Cajas" id="Cajas" placeholder="Cajas" required></td>
         <tr>
-          <td>     <label for="inputPassword3" class="col-sm-2 control-label">Unidades Contadas</label>                  </td>
-          <td>     <input type="number" class="form-control"  name="Uni"   id="Uni"   placeholder="Unidades"   required>       </td>
+          <td>     <label for="Uni" class="col-sm-2 control-label">unidades contadas:</label></td>
+          <td>     <input type="number" class="form-control"  name="Uni"   id="Uni"  placeholder="Unidades"  required></td>
         <tr>
-          <td colspan=2 style="text-align:center;"> <input name="Consultar" type="submit" value="Grabar Conteo">     </td>
+          <td colspan=2 style="text-align:center;"> <input name="Consultar" type="submit" value="Grabar Conteo" class="btn-enviar"></td>
             <input id="Tam"      name="Tam"      type="hidden" value="">
             <input id="Autoriza" name="Autoriza" type="hidden" value="">
         </tr>
