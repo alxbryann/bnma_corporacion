@@ -115,14 +115,20 @@
                     theForm.submit();
            }
 </SCRIPT>
-    <title>Grabacion de Conteo de Inventario</title>
+    <title>Conteo de Inventario</title>
+    <link rel="stylesheet" href="estilosphp.css">
+    <link rel="icon" href="logo.png">
   </head>
 	<body>
-      <form  id="form1" name="form1"  action="PruebaInicial.php" method="post">
-        <table   style=width:40%  border=2>
+    <header>
+      <img src="logo_blanco.png">
+      <h1>CORPORACION BNMA</h1>
+    </header>
+      <form  id="form1" name="form1"  action="PruebaInicial.php" method="POST">
+        <table>
         <tr><td> Seleccione la Presentacion a Contar </td>
         <td>
-         <select  name="Cprese">
+        <select  name="Cprese">
         <?php
             require('Conexion.php');
             date_default_timezone_set('America/Bogota');
@@ -130,11 +136,11 @@
             $Fecha =strval(date("Y-m-d", $time));
             $Fecha=date("Y-m-d",strtotime($Fecha."- 0 days"));
             $sql = " SELECT T1.CODCAT as CODCAT,T1.NOMBRE as NOMBRE FROM categorias T1".
-                   " WHERE NOT EXISTS (SELECT  NULL  FROM web_reg_conteo T2  WHERE T1.CODCAT = T2.codigo and DATE_FORMAT( F_Creacion, '%Y-%m-%d')='$Fecha' and T2.estado=1)  AND (T1.SEGWEBF+T1.SEGWEBT)>'0' ".
-                   " ORDER BY T1.CODCAT";
-                         $result=$mysqli->query($sql);
-                         $rows = $result->num_rows;
-                         if ($result = $mysqli->query($sql)) { while ($row = $result->fetch_assoc()) { echo "<option value=".$row["CODCAT"].">"  .$row["CODCAT"]. '-' . $row["NOMBRE"]."</option>";  } }
+            " WHERE NOT EXISTS (SELECT  NULL  FROM web_reg_conteo T2  WHERE T1.CODCAT = T2.codigo and DATE_FORMAT( F_Creacion, '%Y-%m-%d')='$Fecha' and T2.estado=1)  AND (T1.SEGWEBF+T1.SEGWEBT)>'0' ".
+            " ORDER BY T1.CODCAT";
+            $result=$mysqli->query($sql);
+            $rows = $result->num_rows;
+        if ($result = $mysqli->query($sql)) { while ($row = $result->fetch_assoc()) { echo "<option value=".$row["CODCAT"].">"  .$row["CODCAT"]. '-' . $row["NOMBRE"]."</option>";  } }
         ?>
       </select>
       </td>
@@ -147,16 +153,11 @@
           <td>     <input type="number" class="form-control"  name="Uni"   id="Uni"   placeholder="Unidades"   required>       </td>
         <tr>
           <td colspan=2 style="text-align:center;"> <input name="Consultar" type="submit" value="Grabar Conteo">     </td>
-                       <input id="Tam"      name="Tam"      type="hidden" value="">
-                       <input id="Autoriza" name="Autoriza" type="hidden" value="">
+            <input id="Tam"      name="Tam"      type="hidden" value="">
+            <input id="Autoriza" name="Autoriza" type="hidden" value="">
         </tr>
         </table>
         
               </form>
   </body>
   </html>
-
-
-  
-  
- 
