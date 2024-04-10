@@ -25,12 +25,12 @@ header img {
 
 #h1Container{
     border-radius: 20px;
+    border: 2px solid #fd2717;
     text-align: center;
     margin-top: 3%;
-    margin-left: 43%;
-    width: 15%;
-    background-color: #fd2717;
-    color: white;
+    margin-left: 40%;
+    width: 20%;
+    color: #fd2717;
     animation: bajar 1s both;
 }
 
@@ -46,20 +46,43 @@ header img {
 #optionsContainer{
     display: grid;
     grid-template-columns: repeat(4,1fr);
-    width: 80%;
-    margin-left: 10%;
+    width: 95%;
+    margin-left: 2.5%;
     margin-top: 3%;
-    border-radius: 20px;
-    color:white;
+    border-radius: 40px;
     background-color: #fd2717;
     animation: bajar 1s both;
 }
 
 .option{
+    margin-left: 2%;
+    margin-top: 5%;
+    width: 94%;
     text-align: center;
-    
+    background-color: white;
+    border: 5px solid salmon;
+    border-radius: 30px;
+    transition: all 0.3s;
+}
+.option:hover{
+    scale: 1.05;
 }
 .option h1{
-    padding-top: 15px;
-    margin-left: 30px;
+    padding-top: 10px;
+}
+p{
+    text-align: center;
+}
+@media screen and (max-width:800px) {
+    #h1Container{
+        margin-top: 3%;
+        margin-left: 30%;
+        width: 50%;
+        animation: bajar 1s both;
+    }
+    
+    #optionsContainer{
+        grid-template-columns: repeat(1,1fr);
+        margin-bottom: 10%;
+    }
 }
