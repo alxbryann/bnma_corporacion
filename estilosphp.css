@@ -12,12 +12,11 @@ header {
     justify-content: center;
     background-color: #fd2717;
 }
-
-body{
-}
 form{
+    justify-content: center;
     margin-top: 3%;;
     border: 4px solid #fd2717;
+    border-radius: 20px;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
@@ -33,22 +32,26 @@ header img {
 }
 
 #contenedorSelect{
+    padding-left: 5%;
+    padding-right: 2%;
     display: flex;
     justify-content: space-between;
     margin-top: 2%;
-    width: 100%;
+    width: 90%;
 }
 
 #contenedorInput{
+    padding-left: 5%;
+    padding-right: 2%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-top: 1.5%;
-    width: 100%;
+    width: 90%;
 }
 
 .select.perso{
     margin-left: 10%;
-    width: 40%;
+    height: auto;
     border-radius: 5px;
 }
 
@@ -59,7 +62,6 @@ label{
 }
 
 input{  
-    margin-left: 10%;
     width: 40%;
     height: 30px;
     border: 1px solid #fd2717;

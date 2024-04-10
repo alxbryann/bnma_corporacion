@@ -13,15 +13,15 @@
 		$result=$mysqli->query($sql);
 		$rows = $result->num_rows;
         if($rows > 0) {
-          $array= $result->fetch_assoc();
-          $_SESSION['datos']['Nit']= $array['Nit'];
-          $_SESSION['datos']['Nombre'] =$array['Nombre'];
-          $_SESSION["SESSION"]=$datos;
-          header("Location:PruebaInicial.php");
-          }
-       else{
-          echo 'error Login';
-          header("Location:index.html");
-         }
-     	}
+        $array= $result->fetch_assoc();
+        $_SESSION['datos']['Nit']= $array['Nit'];
+        $_SESSION['datos']['Nombre'] =$array['Nombre'];
+        $_SESSION["SESSION"]=$datos;
+        header("Location:PruebaInicial.php");
+        }
+        else{
+            echo 'error Login';
+            header("Location:index.html");
+        }
+    }
 ?>

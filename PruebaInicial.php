@@ -148,11 +148,11 @@ function Lista_Tamaños()
             <label for="Uni" class="col-sm-2 control-label">UNIDADES CONTADAS:</label>
             <input type="number" class="form-control" name="Uni" id="Uni" placeholder="Unidades" required>
         </div>
-          <label colspan=2 style="text-align:center;">
+            <label colspan=2 style="text-align:center;">
             <input name="Consultar" type="submit" value="Grabar Conteo" class="btn-enviar">
-          </label>
-          <input id="Tam"      name="Tam"      type="hidden" value="">
-          <input id="Autoriza" name="Autoriza" type="hidden" value="">
-      </form>
-  </body>
+            </label>
+            <input id="Tam"      name="Tam"      type="hidden" value="">
+            <input id="Autoriza" name="Autoriza" type="hidden" value="">
+    </form>
+</body>
 </html>
