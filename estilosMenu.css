@@ -67,8 +67,12 @@ header img {
 .option:hover{
     scale: 1.05;
 }
+.option a{
+    text-decoration: none;
+}
 .option h1{
     padding-top: 10px;
+    color: black;
 }
 p{
     text-align: center;

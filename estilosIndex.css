@@ -154,10 +154,11 @@ form .btn-enviar {
 /*CONFIGURACION CELULAR*/
 @media screen and (max-width: 800px) {
   header {
-    margin-top: -5%;
+    margin-top: -8%;
   }
   header h1 {
     margin-top: 8%;
+    font-size: 150%;
   }
 
   .firstSlide {

@@ -111,8 +111,8 @@ function Lista_Tamaños()
         rel="stylesheet">
     <link rel="stylesheet" href="estilosphp.css">
     <link rel="icon" href="logo.png">
-</head>
-<body>
+    </head>
+    <body>
     <header>
         <img src="logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
@@ -154,5 +154,5 @@ function Lista_Tamaños()
             <input id="Tam"      name="Tam"      type="hidden" value="">
             <input id="Autoriza" name="Autoriza" type="hidden" value="">
     </form>
-</body>
-</html>
+    </body>
+    </html>
