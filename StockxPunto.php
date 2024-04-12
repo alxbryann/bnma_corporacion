@@ -28,11 +28,9 @@ function Lista_Inventario()
     echo "<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>";
     echo "<link href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>";
     echo "<header>";
-    echo "<a href='menu.html'>";
     echo "<img src='logo_blanco.png'>";
     echo "<h1>CORPORACION BNMA</h1>";
     echo "</header>";
-    echo "</a>";
     echo "<table>";
     echo "<tr>";
     echo "<td> Cant </td><td>Categoria</td><td>Nombre</td><td>Stock</td>";
