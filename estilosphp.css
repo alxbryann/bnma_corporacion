@@ -37,7 +37,12 @@ header img {
     display: flex;
     justify-content: space-between;
     margin-top: 2%;
-    width: 90%;
+    width: 100%;
+}
+#contenedorSelect select{
+    width: 20%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #contenedorInput{
@@ -46,7 +51,13 @@ header img {
     display: flex;
     justify-content: space-between;
     margin-top: 1.5%;
-    width: 90%;
+    width: 100%;
+}
+
+#contenedorInput input{
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
 }
 
 .select.perso{
