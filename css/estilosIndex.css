@@ -7,7 +7,6 @@
 }
 
 header {
-  margin-top: -2%;
   display: flex;
   width: 100%;
   height: 100px;
@@ -17,7 +16,8 @@ header {
 
 header h1 {
   color: white;
-  margin: 1.5%;
+  margin-top: auto;
+  margin-bottom: auto;
   font-size: 250%;
 }
 
@@ -50,16 +50,6 @@ header img {
   margin-left: 5%;
   width: 100%;
   text-align: center;
-  animation: fadein 2s both;
-}
-
-@keyframes fadein {
-  from {
-    transform: translateY(50%);
-  }
-
-  to {
-  }
 }
 
 #inicioSesion h1 {
@@ -117,9 +107,6 @@ form .btn-enviar {
 
 /*CONFIGURACION PORTATIL*/
 @media screen and (min-width: 1000px) and (max-width: 1600px) {
-  header h1 {
-    margin-top: 2%;
-  }
 
   #inicioSesion {
     width: 80%;
@@ -153,14 +140,6 @@ form .btn-enviar {
 
 /*CONFIGURACION CELULAR*/
 @media screen and (max-width: 800px) {
-  header {
-    margin-top: -8%;
-  }
-  header h1 {
-    margin-top: 8%;
-    font-size: 150%;
-  }
-
   .firstSlide {
     margin-left: -5%;
     grid-template-columns: repeat(1, 1fr);
