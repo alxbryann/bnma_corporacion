@@ -48,15 +48,15 @@ function Lista_Inventario()
             ?>
             <tr>
                 <?php
-                if($row["nitlocal"] == 901724534-7 && $row["nrosucursal"] == 1) {
+                if($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
                     $row["nitlocal"] = "Drinks 1";
                 }
-                if($row["nitlocal"] == 901724534-7 && $row["nrosucursal"] == 2) {
+                if($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "2") {
                     $row["nitlocal"] = "Drinks 2";
                 }
-                /*if($row["nitlocal"] != 901724534-7) {
+                if($row["nitlocal"] != "901724534-7") {
                     $row["nitlocal"] = "Gran Central";
-                }*/
+                }
                 ?>
                 <td width="1%"><?= $row["nitlocal"] ?></td>
                 <td width="5%"><?= $row["Nombre"] ?></td>
