@@ -39,7 +39,7 @@ function Lista_Inventario()
     
     <table>
         <tr>
-            <td> Cant </td><td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>
+            <td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>
         </tr>
     <?php
     if ($result = $mysqli->query($sql)) {
@@ -47,7 +47,6 @@ function Lista_Inventario()
         while ($row = $result->fetch_assoc()) {
             ?>
             <tr>
-                <td width="1%"><?= $id ?></td>
                 <td width="1%"><?= $row["nitlocal"] ?></td>
                 <td width="1%"><?= $row["nrosucursal"] ?></td>
                 <td width="1%"><?= $row["CodCat"] ?></td>
