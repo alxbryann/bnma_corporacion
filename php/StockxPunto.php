@@ -41,6 +41,8 @@ function Lista_Inventario()
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td width=\"1%\">" . $id . "</td>";
+            echo "<td width=\"1%\">" . $row["nitlocal"] . "</td>";
+            echo "<td width=\"1%\">" . $row["Nrosucursal"] . "</td>";
             echo "<td width=\"1%\">" . $row["CodCat"] . "</td>";
             echo "<td width=\"5%\">" . $row["Nombre"] . "</td>";
             echo "<td width=\"5%\">" . $row["Stock"] . "</td>";
