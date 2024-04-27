@@ -80,7 +80,19 @@ table {
     width: 80%;
     text-align: center;
     margin-bottom: 3%;
-    border: 2px solid black;
+    border-radius: 30px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+}
+td{
+    background-color: #fd2717; 
+    color: white;
+    font-size: 20px;
+    padding: 15px;
+}
+th{
+    background-color: white;
+    border: 2px solid #fd2717;
+    padding: 15px;
 }
 
 #aContainer a{
