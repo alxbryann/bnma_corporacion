@@ -84,14 +84,12 @@ table {
     box-shadow: 0 0 20px rgba(0,0,0,0.15);
 }
 td{
-    background-color: #fd2717; 
-    color: white;
-    font-size: 20px;
     padding: 15px;
 }
 th{
-    background-color: white;
-    border: 2px solid #fd2717;
+    background-color: #fd2717; 
+    font-size: 20px;
+    color: white;
     padding: 15px;
 }
 

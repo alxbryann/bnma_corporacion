@@ -39,7 +39,7 @@ function Lista_Inventario()
     
     <table>
         <tr>
-            <td>Empresa</td><td>Nombre</td><td>Stock</td>
+            <th>Empresa</th><th>Nombre</th><th>Stock</th>
         </tr>
     <?php
     if ($result = $mysqli->query($sql)) {
