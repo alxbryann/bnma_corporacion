@@ -48,9 +48,8 @@ function Lista_Inventario()
         if ($result = $mysqli->query($sql)) {
             $row = 0;
             while ($row = $result->fetch_assoc()) {
-                $rowColor = ($row % 2 == 0) ? 'odd' : 'even'; // Alternar colores de fila
                 ?>
-                <tr class="<?= $rowColor ?>">
+                <tr>
                     <?php
                     if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
                         $row["nitlocal"] = "Drinks 1";
