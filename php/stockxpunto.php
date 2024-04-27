@@ -41,7 +41,7 @@ function Lista_Inventario()
     </div>
 
     <table>
-        <table class="table-danger">...</table>
+        <table class="table-danger">
             <td>Empresa</td>
             <td>Nombre</td>
             <td>Stock</td>
