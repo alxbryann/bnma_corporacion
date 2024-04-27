@@ -18,17 +18,17 @@ if (!$User) {
 
 function Graba_conteo()
 {
-    require('Conexion.php');
+    require ('Conexion.php');
     date_default_timezone_set('America/Bogota');
-    $time  = time();
+    $time = time();
     $Fecha = strval(date("Y-m-d", $time));
-    $Hora  = strval(date("H:i:s", $time));
-    $User  = $_SESSION['datos']['Nit'];
+    $Hora = strval(date("H:i:s", $time));
+    $User = $_SESSION['datos']['Nit'];
 
-    $Xcprese   = $_POST["Cprese"];
-    $Xcajas    = $_POST["Cajas"];
-    $XUnida    = $_POST["Uni"];
-    $Xtam      = $_POST["Tam"];
+    $Xcprese = $_POST["Cprese"];
+    $Xcajas = $_POST["Cajas"];
+    $XUnida = $_POST["Uni"];
+    $Xtam = $_POST["Tam"];
 
     if (!empty($Xcprese)) {
         $Unicaja = UnicajaXCprese($_POST["Cprese"]);
@@ -41,7 +41,7 @@ function Graba_conteo()
 
 function UnicajaXCprese($T)
 {
-    require('Conexion.php');
+    require ('Conexion.php');
     $sql = "select Unicaja from categorias where codcat= '$T' ";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
@@ -55,7 +55,7 @@ function UnicajaXCprese($T)
 
 function Lista_Tamaños()
 {
-    require('Conexion.php');
+    require ('Conexion.php');
     $sql = "select CodCat,categorias.Nombre as Cat,companias.NOMBRE as Comp from categorias inner join companias on categorias.CodComp=companias.ID";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
@@ -83,11 +83,11 @@ function Lista_Tamaños()
 ?>
 
 <html>
+
 <head>
     <meta http-equiv="refresh" content="150">
     <SCRIPT LANGUAGE="JavaScript">
-        function mi_alerta(b)
-        {
+        function mi_alerta(b) {
             var theForm = document.forms['form1'];
             // document.form1.Tam.value = "30";
             document.getElementById("Tam").value = b.id;
@@ -95,8 +95,7 @@ function Lista_Tamaños()
             theForm.submit();
         }
 
-        function mi_alerta1(c)
-        {
+        function mi_alerta1(c) {
             var theForm = document.forms['form1'];
             // document.form1.Tam.value = "30";
             document.getElementById("Autoriza").value = c.id;
@@ -111,8 +110,9 @@ function Lista_Tamaños()
         rel="stylesheet">
     <link rel="stylesheet" href="estilosphp.css">
     <link rel="icon" href="logo.png">
-    </head>
-    <body>
+</head>
+
+<body>
     <header>
         <img src="logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
@@ -122,7 +122,7 @@ function Lista_Tamaños()
             <label>SELECCIONA EL ITEM A CONTAR:</label>
             <select name="Cprese" class="select-perso">
                 <?php
-                require('Conexion.php');
+                require ('Conexion.php');
                 date_default_timezone_set('America/Bogota');
                 $time = time() - 1;
                 $Fecha = strval(date("Y-m-d", $time));
@@ -148,11 +148,12 @@ function Lista_Tamaños()
             <label for="Uni" class="col-sm-2 control-label">UNIDADES CONTADAS:</label>
             <input type="number" class="form-control" name="Uni" id="Uni" placeholder="Unidades" required>
         </div>
-            <label colspan=2 style="text-align:center;">
+        <label colspan=2 style="text-align:center;">
             <input name="Consultar" type="submit" value="Grabar Conteo" class="btn-enviar">
-            </label>
-            <input id="Tam"      name="Tam"      type="hidden" value="">
-            <input id="Autoriza" name="Autoriza" type="hidden" value="">
+        </label>
+        <input id="Tam" name="Tam" type="hidden" value="">
+        <input id="Autoriza" name="Autoriza" type="hidden" value="">
     </form>
-    </body>
-    </html>
+</body>
+
+</html>

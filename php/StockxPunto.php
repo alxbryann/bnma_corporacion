@@ -10,12 +10,12 @@ if (!$User) {
 
 function Lista_Inventario()
 {
-    require('Conexion.php');
-    $sql = " select categorias.CodCat,categorias.Nombre, round(sum(stock),1) as Stock ".
-        " from categorias ". 
-        " inner join catproductos on categorias.codcat=catproductos.CodCat ".
-        " inner join productos on catproductos.Sku=productos.Sku ".
-        " inner join StockProd on StockProd.Sku=productos.Sku ".
+    require ('Conexion.php');
+    $sql = " select categorias.CodCat,categorias.Nombre, round(sum(stock),1) as Stock " .
+        " from categorias " .
+        " inner join catproductos on categorias.codcat=catproductos.CodCat " .
+        " inner join productos on catproductos.Sku=productos.Sku " .
+        " inner join StockProd on StockProd.Sku=productos.Sku " .
         " group by categorias.CodCat " .
         " order by categorias.CodCat ";
     $result = $mysqli->query($sql);

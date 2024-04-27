@@ -26,19 +26,6 @@ header img {
   animation: inicioImagen 1s both;
 }
 
-@keyframes inicioImagen {
-  from {
-    transform: translateX(-500%);
-    scale: 40%;
-    opacity: 0%;
-  }
-
-  to {
-    transform: translateX(0);
-    opacity: 100%;
-  }
-}
-
 .firstSlide {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -102,7 +89,15 @@ form .btn-enviar {
 
 #carouselExampleAutoplaying {
   margin-left: 15%;
-  width: 80%;
+  width: 100%;
+}
+
+@keyframes inicioImagen {
+  from {
+    transform: translateX(-1000px);
+    scale: 40%;
+    opacity: 0%;
+  }
 }
 
 /*CONFIGURACION PORTATIL*/

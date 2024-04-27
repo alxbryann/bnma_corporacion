@@ -7,7 +7,8 @@ if (!$User) {
 } else {
     lista_empleados();
 }
-function lista_empleados(){
-    require('Conexion.php');
+function lista_empleados()
+{
+    require ('Conexion.php');
 }
 ?>
