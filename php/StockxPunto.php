@@ -23,33 +23,38 @@ function Lista_Inventario()
     $Filas = $rows;
     $numero = 0;
     $id = 1;
-    echo '<link rel="icon" href="/img/logo.png">';
-    echo "<link rel='stylesheet' type='text/css' href='/css/estilosMenu.css'>";
-    echo "<link rel='preconnect' href='https://fonts.googleapis.com'>";
-    echo "<link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>";
-    echo "<link href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>";
-    echo "<header>";
-    echo "<img src='/img/logo_blanco.png'>";
-    echo "<h1>CORPORACION BNMA</h1>";
-    echo "</header>";
-    echo "<table>";
-    echo "<tr>";
-    echo "<td> Cant </td><td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>";
-    echo " </tr> \n";
+    ?>
+    <link rel="icon" href="/img/logo.png">
+    <link rel='stylesheet' type='text/css' href='/css/estilosMenu.css'>
+    <link rel='preconnect' href='https://fonts.googleapis.com'>
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+    <header>
+        <img src='/img/logo_blanco.png'>
+        <h1>CORPORACION BNMA</h1>
+    </header>
+    <table>
+        <tr>
+            <td> Cant </td><td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>
+        </tr>
+    <?php
     if ($result = $mysqli->query($sql)) {
         $row = 0;
         while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td width=\"1%\">" . $id . "</td>";
-            echo "<td width=\"1%\">" . $row["nitlocal"] . "</td>";
-            echo "<td width=\"1%\">" . $row["nrosucursal"] . "</td>";
-            echo "<td width=\"1%\">" . $row["CodCat"] . "</td>";
-            echo "<td width=\"5%\">" . $row["Nombre"] . "</td>";
-            echo "<td width=\"5%\">" . $row["Stock"] . "</td>";
-            echo "</tr>";
+            ?>
+            <tr>
+                <td width="1%"><?= $id ?></td>
+                <td width="1%"><?= $row["nitlocal"] ?></td>
+                <td width="1%"><?= $row["nrosucursal"] ?></td>
+                <td width="1%"><?= $row["CodCat"] ?></td>
+                <td width="5%"><?= $row["Nombre"] ?></td>
+                <td width="5%"><?= $row["Stock"] ?></td>
+            </tr>
+            <?php
             $id = $id + 1;
         }
-    }
-    echo "</table>";
+    }?>
+    </table>
+    <?php
 }
 ?>
