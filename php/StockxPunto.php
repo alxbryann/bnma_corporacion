@@ -16,7 +16,7 @@ function Lista_Inventario()
         " inner join catproductos on categorias.codcat=catproductos.CodCat " .
         " inner join productos on catproductos.Sku=productos.Sku " .
         " inner join StockProd on StockProd.Sku=productos.Sku " .
-        " group by categorias.CodCat " .
+        " group by nitlocal,nrosucursal,categorias.CodCat " .
         " order by categorias.CodCat ";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
