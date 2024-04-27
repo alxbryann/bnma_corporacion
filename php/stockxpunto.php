@@ -39,7 +39,7 @@ function Lista_Inventario()
     
     <table>
         <tr>
-            <td>Nit</td><td>Sucursal</td><td>Nombre</td><td>Stock</td>
+            <td>Empresa</td><td>Nombre</td><td>Stock</td>
         </tr>
     <?php
     if ($result = $mysqli->query($sql)) {
@@ -47,8 +47,18 @@ function Lista_Inventario()
         while ($row = $result->fetch_assoc()) {
             ?>
             <tr>
+                <?php
+                if($row["nitlocal"] == 901724534-7 && $row["nrosucursal"] == 1) {
+                    $row["nitlocal"] = "Drinks 1";
+                }
+                if($row["nitlocal"] == 901724534-7 && $row["nrosucursal"] == 2) {
+                    $row["nitlocal"] = "Drinks 2";
+                }
+                if($row["nitlocal"] != 901724534-7) {
+                    $row["nitlocal"] = "Gran Central";
+                }
+                ?>
                 <td width="1%"><?= $row["nitlocal"] ?></td>
-                <td width="1%"><?= $row["nrosucursal"] ?></td>
                 <td width="5%"><?= $row["Nombre"] ?></td>
                 <td width="5%"><?= $row["Stock"] ?></td>
             </tr>
