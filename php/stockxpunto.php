@@ -38,8 +38,7 @@ function Lista_Inventario()
         <h1>Inventario General</h1>
     </div>
     
-    <table>
-        <thead class=table-light">
+    <table class="table table-dark table-striped">
         <tr>
             <td>Empresa</td><td>Nombre</td><td>Stock</td>
         </tr>
