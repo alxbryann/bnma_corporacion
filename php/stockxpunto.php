@@ -42,9 +42,9 @@ function Lista_Inventario()
 
     <table>
         <table class="table-danger">
-            <td>Empresa</td>
-            <td>Nombre</td>
-            <td>Stock</td>
+            <td class="table-danger">Empresa</td>
+            <td class="table-danger">Nombre</td>
+            <td class="table-danger">Stock</td>
         </thead>
         </tr>
         <?php
@@ -52,7 +52,7 @@ function Lista_Inventario()
             $row = 0;
             while ($row = $result->fetch_assoc()) {
                 ?>
-                <tr>
+                <tr class="table-danger">
                     <?php
                     if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
                         $row["nitlocal"] = "Drinks 1";
