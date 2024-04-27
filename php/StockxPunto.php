@@ -11,13 +11,13 @@ if (!$User) {
 function Lista_Inventario()
 {
     require ('Conexion.php');
-    $sql = " select categorias.CodCat,categorias.Nombre, round(sum(stock),1) as Stock " .
+    $sql = " select nitlocal,nrosucursal,categorias.CodCat,categorias.Nombre, round(sum(stock),1) as Stock " .
         " from categorias " .
         " inner join catproductos on categorias.codcat=catproductos.CodCat " .
         " inner join productos on catproductos.Sku=productos.Sku " .
         " inner join StockProd on StockProd.Sku=productos.Sku " .
-        " group by categorias.CodCat " .
-        " order by categorias.CodCat ";
+        " group by nitlocal,nrosucursal,categorias.CodCat " .
+        " order by categorias.CodCat,nitlocal,nrosucursal";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
     $Filas = $rows;
@@ -34,13 +34,15 @@ function Lista_Inventario()
     echo "</header>";
     echo "<table>";
     echo "<tr>";
-    echo "<td> Cant </td><td>Categoria</td><td>Nombre</td><td>Stock</td>";
+    echo "<td> Cant </td><td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>";
     echo " </tr> \n";
     if ($result = $mysqli->query($sql)) {
         $row = 0;
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td width=\"1%\">" . $id . "</td>";
+            echo "<td width=\"1%\">" . $row["nitlocal"] . "</td>";
+            echo "<td width=\"1%\">" . $row["nrosucursal"] . "</td>";
             echo "<td width=\"1%\">" . $row["CodCat"] . "</td>";
             echo "<td width=\"5%\">" . $row["Nombre"] . "</td>";
             echo "<td width=\"5%\">" . $row["Stock"] . "</td>";
