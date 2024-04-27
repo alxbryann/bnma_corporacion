@@ -117,7 +117,7 @@ function Lista_Tamaños()
         <img src="/img/logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
     </header>
-    <form id="form1" name="form1" action="PruebaInicial.php" method="POST">
+    <form id="form1" name="form1" action="conteo.php" method="POST">
         <div id="contenedorSelect">
             <label>SELECCIONA EL ITEM A CONTAR:</label>
             <select name="Cprese" class="select-perso">
