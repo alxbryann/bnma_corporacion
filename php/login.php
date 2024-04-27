@@ -1,6 +1,6 @@
 <?php
 session_start();
-require ('Conexion.php');
+require ('conexion.php');
 if (!empty($_POST)) {
     $usuario = mysqli_real_escape_string($mysqli, $_POST['usuario']);
     $password = mysqli_real_escape_string($mysqli, $_POST['contraseña']);

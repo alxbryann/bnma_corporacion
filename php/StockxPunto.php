@@ -10,7 +10,7 @@ if (!$User) {
 
 function Lista_Inventario()
 {
-    require ('Conexion.php');
+    require ('conexion.php');
     $sql = " select nitlocal,nrosucursal,categorias.CodCat,categorias.Nombre, round(sum(stock),1) as Stock " .
         " from categorias " .
         " inner join catproductos on categorias.codcat=catproductos.CodCat " .

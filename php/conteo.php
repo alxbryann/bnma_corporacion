@@ -18,7 +18,7 @@ if (!$User) {
 
 function Graba_conteo()
 {
-    require ('Conexion.php');
+    require ('conexion.php');
     date_default_timezone_set('America/Bogota');
     $time = time();
     $Fecha = strval(date("Y-m-d", $time));
@@ -41,7 +41,7 @@ function Graba_conteo()
 
 function UnicajaXCprese($T)
 {
-    require ('Conexion.php');
+    require ('conexion.php');
     $sql = "select Unicaja from categorias where codcat= '$T' ";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
@@ -55,7 +55,7 @@ function UnicajaXCprese($T)
 
 function Lista_Tamaños()
 {
-    require ('Conexion.php');
+    require ('conexion.php');
     $sql = "select CodCat,categorias.Nombre as Cat,companias.NOMBRE as Comp from categorias inner join companias on categorias.CodComp=companias.ID";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
@@ -122,7 +122,7 @@ function Lista_Tamaños()
             <label>SELECCIONA EL ITEM A CONTAR:</label>
             <select name="Cprese" class="select-perso">
                 <?php
-                require ('Conexion.php');
+                require ('conexion.php');
                 date_default_timezone_set('America/Bogota');
                 $time = time() - 1;
                 $Fecha = strval(date("Y-m-d", $time));
