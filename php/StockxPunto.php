@@ -33,6 +33,10 @@ function Lista_Inventario()
         <img src='/img/logo_blanco.png'>
         <h1>CORPORACION BNMA</h1>
     </header>
+    <div id="h1Container">
+        <h1>Inventario General</h1>
+    </div>
+    
     <table>
         <tr>
             <td> Cant </td><td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>
