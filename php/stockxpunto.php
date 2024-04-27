@@ -54,7 +54,7 @@ function Lista_Inventario()
                 if($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "2") {
                     $row["nitlocal"] = "Drinks 2";
                 }
-                if($row["nitlocal"] != "901724534-7") {
+                if($row["nitlocal"] == "901331637-1") {
                     $row["nitlocal"] = "Gran Central";
                 }
                 ?>
