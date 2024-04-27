@@ -16,10 +16,10 @@ if (!empty($_POST)) {
         $_SESSION['datos']['Nit'] = $array['Nit'];
         $_SESSION['datos']['Nombre'] = $array['Nombre'];
         $_SESSION["SESSION"] = $datos;
-        header("Location:./html/menu.html");
+        header("Location:/html/menu.html");
     } else {
         echo 'error Login';
-        header("Location:./index.html");
+        header("Location:/index.html");
     }
 }
 ?>
