@@ -34,7 +34,7 @@ function Lista_Inventario()
     echo "</header>";
     echo "<table>";
     echo "<tr>";
-    echo "<td> Cant </td><td>Categoria</td><td>Nombre</td><td>Stock</td>";
+    echo "<td> Cant </td><td>Nit</td><td>Sucursal</td><td>Categoria</td><td>Nombre</td><td>Stock</td>";
     echo " </tr> \n";
     if ($result = $mysqli->query($sql)) {
         $row = 0;
@@ -42,7 +42,7 @@ function Lista_Inventario()
             echo "<tr>";
             echo "<td width=\"1%\">" . $id . "</td>";
             echo "<td width=\"1%\">" . $row["nitlocal"] . "</td>";
-            echo "<td width=\"1%\">" . $row["Nrosucursal"] . "</td>";
+            echo "<td width=\"1%\">" . $row["nrosucursal"] . "</td>";
             echo "<td width=\"1%\">" . $row["CodCat"] . "</td>";
             echo "<td width=\"5%\">" . $row["Nombre"] . "</td>";
             echo "<td width=\"5%\">" . $row["Stock"] . "</td>";
