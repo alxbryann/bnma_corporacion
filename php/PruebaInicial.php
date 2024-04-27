@@ -108,13 +108,13 @@ function Lista_Tamaños()
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
-    <link rel="stylesheet" href="estilosphp.css">
-    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="/css/estilosphp.css">
+    <link rel="icon" href="/img/logo.png">
 </head>
 
 <body>
     <header>
-        <img src="logo_blanco.png">
+        <img src="/img/logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
     </header>
     <form id="form1" name="form1" action="PruebaInicial.php" method="POST">
