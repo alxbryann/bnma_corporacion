@@ -28,7 +28,8 @@ function Lista_Inventario()
     <link rel='stylesheet' type='text/css' href='/css/estilosMenu.css'>
     <link rel='preconnect' href='https://fonts.googleapis.com'>
     <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-    <link href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap' rel='stylesheet'>
+    <link href='https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap'
+        rel='stylesheet'>
     <header>
         <img src='/img/logo_blanco.png'>
         <h1>CORPORACION BNMA</h1>
@@ -36,36 +37,38 @@ function Lista_Inventario()
     <div id="h1Container">
         <h1>Inventario General</h1>
     </div>
-    
+
     <table>
         <tr>
-            <th>Empresa</th><th>Nombre</th><th>Stock</th>
+            <th>Empresa</th>
+            <th>Nombre</th>
+            <th>Stock</th>
         </tr>
-    <?php
-    if ($result = $mysqli->query($sql)) {
-        $row = 0;
-        while ($row = $result->fetch_assoc()) {
-            ?>
-            <tr>
-                <?php
-                if($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
-                    $row["nitlocal"] = "Drinks 1";
-                }
-                if($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "2") {
-                    $row["nitlocal"] = "Drinks 2";
-                }
-                if($row["nitlocal"] == "901331637-1") {
-                    $row["nitlocal"] = "Gran Central";
-                }
+        <?php
+        if ($result = $mysqli->query($sql)) {
+            $row = 0;
+            while ($row = $result->fetch_assoc()) {
+                $rowColor = ($row % 2 == 0) ? 'odd' : 'even'; // Alternar colores de fila
                 ?>
-                <td width="1%"><?= $row["nitlocal"] ?></td>
-                <td width="5%"><?= $row["Nombre"] ?></td>
-                <td width="5%"><?= $row["Stock"] ?></td>
-            </tr>
-            <?php
-            $id = $id + 1;
-        }
-    }?>
+                <tr class="<?= $rowColor ?>">
+                    <?php
+                    if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
+                        $row["nitlocal"] = "Drinks 1";
+                    }
+                    if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "2") {
+                        $row["nitlocal"] = "Drinks 2";
+                    }
+                    if ($row["nitlocal"] == "901331637-1") {
+                        $row["nitlocal"] = "Gran Central";
+                    }
+                    ?>
+                    <td width="1%"><?= $row["nitlocal"] ?></td>
+                    <td width="5%"><?= $row["Nombre"] ?></td>
+                    <td width="5%"><?= $row["Stock"] ?></td>
+                </tr>
+                <?php
+            }
+        } ?>
     </table>
     <?php
 }
