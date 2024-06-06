@@ -36,8 +36,8 @@ function Lista_Inventario()
     </header>
     <div id="h1Container">
         <h1>Inventario General</h1>
-        <a href="">Inventario por bodega</a>
     </div>
+    <a href="">Inventario por bodega</a>
 
     <table>
         <tr>

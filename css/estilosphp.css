@@ -79,7 +79,26 @@ input{
     color: black;
     border-radius: 5px;
 }
+a {
+    justify-content: center;
+    width: 20%;
+    margin-top: 4%;
+    margin-bottom: 2%;
+    margin-left: 40%;
+    height: 40px;
+    background-color: #fd2717;
+    color:white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
 
+a:hover{ 
+    background-color: white;
+    color: black;
+    border: 2px solid #fd2717;
+    border-radius: 5px;
+}
 .btn-enviar {
     justify-content: center;
     width: 20%;
