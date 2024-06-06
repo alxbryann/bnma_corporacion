@@ -68,9 +68,9 @@ function Lista_Inventario()
                         $stockTotal += $row["Stock"];
                     }
                     ?>
-                    <td width="1%"><?= $row["nitlocal"] ?></td>
-                    <td width="5%"><?= $row["Nombre"] ?></td>
-                    <td width="5%"><?= $row["Stock"] ?></td>
+                    <td width="2%"><?= $row["nitlocal"] ?></td>
+                    <td width="2%"><?= $row["Nombre"] ?></td>
+                    <td width="2%"><?= $row["Stock"] ?></td>
                 </tr>
                 <?php
             }
