@@ -61,6 +61,7 @@ function Lista_Inventario()
                     if ($row["nitlocal"] == "901331637-1") {
                         $row["nitlocal"] = "Gran Central";
                     }*/
+                    $stockTotal = 0;
                     if ($row["nitlocal"] == "901331637-1") {
                         $stockTotal += $row["Stock"];
                         $row["Stock"] = $stockTotal;
