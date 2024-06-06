@@ -51,7 +51,8 @@ function Lista_Inventario()
                 ?>
                 <tr>
                     <?php
-                    if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
+                    //DIVIDE LOS INVENTARIOS DE LAS 3 BODEGAS 
+                    /*if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "1") {
                         $row["nitlocal"] = "Drinks 1";
                     }
                     if ($row["nitlocal"] == "901724534-7" && $row["nrosucursal"] == "2") {
@@ -59,6 +60,12 @@ function Lista_Inventario()
                     }
                     if ($row["nitlocal"] == "901331637-1") {
                         $row["nitlocal"] = "Gran Central";
+                    }*/
+                    if ($row["nitlocal"] == "901331637-1") {
+                        $stockTotal += $row["Stock"];
+                        $row["Stock"] = $stockTotal;
+                    }else{
+                        $stockTotal += $row["Stock"];
                     }
                     ?>
                     <td width="1%"><?= $row["nitlocal"] ?></td>
