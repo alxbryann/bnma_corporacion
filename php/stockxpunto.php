@@ -36,6 +36,7 @@ function Lista_Inventario()
     </header>
     <div id="h1Container">
         <h1>Inventario General</h1>
+        <a href="">Inventario por bodega</a>
     </div>
 
     <table>
@@ -66,7 +67,7 @@ function Lista_Inventario()
                     <td width="2%"><?= $row["Nombre"] ?></td>
                     <td width="2%"><?= $row["Stock"] ?></td>
                 </tr>
-                <?php
+                    <?php
             }
         } ?>
     </table>
