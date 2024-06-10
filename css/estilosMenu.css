@@ -107,24 +107,14 @@ th{
     align-items: center;
 }
 select {
-    margin: 0;
-    padding: 0;
-    width: 100%;
+    width: 40%;
+    margin-left: auto;
+    margin-right: auto;
     height: 40px;
     border-radius: 5px;
     border: 2px solid #fd2717;
     background-color: white;
     transition: border-color 0.3s;
-}
-
-select:hover {
-    border-color: salmon;
-}
-
-select:focus {
-    outline: none;
-    border-color: salmon;
-    box-shadow: 0 0 5px salmon;
 }
 @media screen and (max-width:1400px) {
     header h1{
