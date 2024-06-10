@@ -29,7 +29,7 @@ function Lista_Inventario(){
         <h1>CORPORACION BNMA</h1>
     </header>
     <div id="h1Container">
-        <h1>Modulo de inventario de <?php echo $opcionSeleccionada; ?></h1>
+        <h1>Modulo de inventario de <?php echo "hola" ?></h1>
     </div>
     <table>
         <tr>
