@@ -18,7 +18,6 @@ function Lista_Inventario(){
     $sql = "SELECT * FROM StockProd WHERE NitLocal = '901331637-1'";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
-    // Remove unused variables
 ?>
     <link rel="icon" href="/img/logo.png">
     <link rel='stylesheet' type='text/css' href='/css/estilosMenu.css'>
@@ -30,8 +29,7 @@ function Lista_Inventario(){
         <h1>CORPORACION BNMA</h1>
     </header>
     <div id="h1Container">
-        <h1>Modulo de inventario</h1>
-        <h1>Inventario de <?php echo $opcionSeleccionada ?></h1>
+        <h1>Modulo de inventario de <?php echo $opcionSeleccionada; ?></h1>
     </div>
     <table>
         <tr>
