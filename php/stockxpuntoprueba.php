@@ -15,7 +15,7 @@ if (!$User) {
 }
 function Lista_Inventario(){
     require('conexion.php');
-    $sql = "SELECT * FROM StockxProd WHERE NitLocal = '901331637-1'";
+    $sql = "SELECT * FROM StockProd WHERE NitLocal = '901331637-1'";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
     // Remove unused variables
