@@ -7,7 +7,6 @@ if (!$User) {
 } else {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $opcionSeleccionada = $_POST["opciones"];
-        echo $opcionSeleccionada;
         Lista_Inventario();
     }
 }
