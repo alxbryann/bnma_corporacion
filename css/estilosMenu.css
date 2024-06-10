@@ -114,7 +114,6 @@ select {
     border-radius: 5px;
     border: 2px solid #fd2717;
     background-color: white;
-    transition: border-color 0.3s;
 }
 @media screen and (max-width:1400px) {
     header h1{

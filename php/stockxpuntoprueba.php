@@ -34,15 +34,17 @@ function Lista_Inventario()
         <h1>CORPORACION BNMA</h1>
     </header>
     <div id="h1Container">
-        <h1>Inventario General</h1>
+        <h1>Modelo de inventario</h1>
     </div>
     <form action="stock.php" method="post">
         <p>Selecciona una opción:</p>
+        <br>
+        <br>
         <select name="opciones">
+            <option value="inventario_general">Inventario general</option>
             <option value="drinks">Drinks</option>
             <option value="drinks2">Drinks 2</option>
             <option value="gran_central">Gran Central</option>
-            <option value="inventario_general">Inventario general</option>
         </select>
         <input type="submit" value="Enviar">
     </form>
