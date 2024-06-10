@@ -36,7 +36,6 @@ function Lista_Inventario()
     <div id="h1Container">
         <h1>Inventario General</h1>
     </div>
-    <a href="">Inventario por bodega</a>
     <form action="stock.php" method="post">
         <p>Selecciona una opción:</p>
         <select name="opciones">
@@ -45,7 +44,7 @@ function Lista_Inventario()
             <option value="gran_central">Gran Central</option>
             <option value="inventario_general">Inventario general</option>
         </select>
-        <input type="submit" value="Submit">
+        <input type="submit" value="Enviar">
     </form>
     <table>
         <tr>
