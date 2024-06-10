@@ -10,15 +10,12 @@ if (!$User) {
         Lista_Inventario();
     }
 }
-function Lista_Inventario()
-{
+function Lista_Inventario(){
     require('conexion.php');
     $sql = "SELECT * FROM StockxProd WHERE NitLocal = '901331637-1'";
     $result = $mysqli->query($sql);
     $rows = $result->num_rows;
-    $Filas = $rows;
-    $numero = 0;
-    $id = 1;
+    // Remove unused variables
 ?>
     <link rel="icon" href="/img/logo.png">
     <link rel='stylesheet' type='text/css' href='/css/estilosMenu.css'>
