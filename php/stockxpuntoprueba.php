@@ -1,3 +1,4 @@
+
 <?php
 session_start();
 $User = $_SESSION['datos']['Nit'];
@@ -7,7 +8,7 @@ if (!$User) {
 } else {
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $opcionSeleccionada = $_POST["opciones"];
-        Lista_Inventario();
+        Lista_Inventario($opcionSeleccionada);
     }
 }
 function Lista_Inventario(){
