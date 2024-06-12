@@ -41,9 +41,9 @@ body h2{
 }
 #first-slide #text{
     width: 100%;
-    padding: 20%;
+    padding: 10%;
     text-align:start;
-    background-color: #fd2717;
+    background-color: #f7a472;
     color: white;
 }
 #first-slide #text h4{
@@ -92,17 +92,63 @@ ul{
     width: 100%;
     list-style-type: none;
     overflow: hidden;
+    gap: 10%;
 }
 #gaseosa{
-    width: 80%;
+    border-radius: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
     height: 100px;
     background-image: url('/img/gaseosa.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    transition: 0.5s;
 }
-
+#gaseosa a{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    text-decoration: none;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+    font-size: 400%;
+    
+}
+#gaseosa:hover{
+    scale: 1.2;
+}
+#papeleria{
+    border-radius: 20px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    background-image: url('/img/papeleria.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: 0.5s;
+}
+#papeleria a{
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    text-decoration: none;
+    display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    justify-content: center;
+    font-size: 400%;
+}
+#papeleria:hover{
+    scale: 1.2;
+}
 @media screen and (max-width: 800px) {
+    header h1{
+        font-size: 180%;
+    }
     #first-slide{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
@@ -111,23 +157,13 @@ ul{
         width: 100%;
         text-align: center;
     }
-    #first-slide #text h1{
-        background-color: salmon;
-        border-radius: 20px;
-        padding: 8px;
-    }
+
     #first-slide #text h4{
         margin-bottom: 10%;
-        background-color: salmon;
-        border-radius: 20px;
-        padding: 8px;
+
     }
     #first-slide #text p{
         margin-top: 10%;
-        margin-bottom: -20%;
-        background-color: salmon;
-        border-radius: 20px;
-        padding: 8px;
     }
     #first-slide img{
         width: 100%;
