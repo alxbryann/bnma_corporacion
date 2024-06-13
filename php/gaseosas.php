@@ -21,7 +21,7 @@
         <h1>CORPORACION BNMA</h1>
     </header>
     <div class="card" style="width: 18rem;">
-        <img src="..." class="card-img-top" alt="...">
+        <img src="/img/products/0007.jpg" class="card-img-top" alt="...">
         <div class="card-body">
             <h5 class="card-title">Coca cola 1.5</h5>
         </div>
