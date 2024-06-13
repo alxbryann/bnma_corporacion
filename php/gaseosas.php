@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./img/logo.png">
+    <link rel="icon" href="/img/logo.png">
     <link rel="stylesheet" href="./css/estilosIndex.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,17 +20,26 @@
         <img src="/img/logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
     </header>
-    <div class="card" style="width: 18rem;">
-        <img src="/img/products/0007.jpg" class="card-img-top" alt="...">
-        <div class="card-body">
-            <h5 class="card-title">Coca cola 1.5</h5>
+    <h1 id="h1Container">Nuestro catalogo</h1>
+    <div class="card-container">
+        <div class="card">
+            <img src="/img/products/0007.jpg">
+            <div class="card-body">
+                <h5 class="card-title">Coca cola 1.5</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+                <div id="price">
+                    <li class="list-group-item">Precio:</li>
+                    <li class="list-group-item">$40.000</li>
+                </div>
+                <div id="stock">
+                    <li class="list-group-item">Stock:</li>
+                    <li class="list-group-item">20</li>
+                </div>
+                
+            </ul>
         </div>
-        <ul class="list-group list-group-flush">
-            <li class="list-group-item">Precio: 40000</li>
-            <li class="list-group-item">Stock: 20</li>
-        </ul>
     </div>
-
 </body>
 
 </html>

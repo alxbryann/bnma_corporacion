@@ -111,3 +111,57 @@ a{
     border: 2px solid #fd2717;
     border-radius: 5px;
 }
+.card-container{
+    width: 90%;
+    margin-top: 3%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card{
+    margin: 10px;
+    width: 18%;
+}
+.card img{
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
+}
+.card-title{
+    justify-content: center;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-top: 1px solid lightgray;
+    font-size: 30px;
+}
+#price{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
+#stock{
+    display: flex;
+    justify-content: space-between;
+}
+.list-group-item{
+    border: none;
+}
+.card:hover{
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    scale: 1.05;
+    transition: 0.3s;
+}
+#h1Container{
+    border-radius: 20px;
+    border: 2px solid #fd2717;
+    text-align: center;
+    margin: 3% auto;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1%;
+    width: 20%;
+    color: #fd2717;
+    animation: fadeIn 2s both;
+}
