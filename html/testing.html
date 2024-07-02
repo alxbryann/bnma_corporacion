@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,11 +12,24 @@
     <link rel="stylesheet" href="/css/estilosphp.css">
     <link rel="icon" href="/img/logo.png">
 </head>
+
 <body>
     <header>
         <img src="/img/logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
     </header>
-    <p>Selecciona la empresa que se esta recibiendo</p>
+    <div id="contador">
+        <p>Cantidad por viaje</p>
+        <input type="number" id="input-numero" placeholder="Ingresa un numero">
+        <p>Mercancia ingresada:</p>
+        <p id="numeros">000</p>
+        <div id="botones">
+            <button id="btn" onclick="agregarViaje()" style="background-color: green;">Agregar viaje</button>
+            <button id="btn" onclick="eliminarViaje()" style="background-color: orangered;">Eliminar viaje</button>
+        </div>
+        <button>agregar entrada</button>
+    </div>
+    <script src="/javascript/contador.js"></script>
 </body>
+
 </html>

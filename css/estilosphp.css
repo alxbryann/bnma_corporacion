@@ -1,10 +1,11 @@
-*{
+* {
     margin: 0;
     padding: 0;
     font-family: "Roboto Condensed", sans-serif;
     font-weight: 500;
     font-style: normal;
 }
+
 header {
     display: flex;
     width: 100%;
@@ -12,15 +13,18 @@ header {
     justify-content: center;
     background-color: #fd2717;
 }
-form{
+
+form {
     justify-content: center;
-    margin-top: 3%;;
+    margin-top: 3%;
+    ;
     border: 4px solid #fd2717;
     border-radius: 20px;
     width: 80%;
     margin-left: 10%;
     margin-right: 10%;
 }
+
 header h1 {
     color: white;
     margin: 1.5%;
@@ -31,7 +35,7 @@ header img {
     scale: 60%;
 }
 
-#contenedorSelect{
+#contenedorSelect {
     padding-left: 5%;
     padding-right: 2%;
     display: flex;
@@ -39,13 +43,14 @@ header img {
     margin-top: 2%;
     width: 100%;
 }
-#contenedorSelect select{
+
+#contenedorSelect select {
     width: 20%;
     margin-left: auto;
     margin-right: auto;
 }
 
-#contenedorInput{
+#contenedorInput {
     padding-left: 5%;
     padding-right: 2%;
     display: flex;
@@ -54,32 +59,74 @@ header img {
     width: 100%;
 }
 
-#contenedorInput input{
+#contenedorInput input {
     margin-left: auto;
     margin-right: auto;
     width: 20%;
 }
 
-.select.perso{
+button {
+    display: flex;
+    font-size: 20px;
+    color: white;
+    background-color: #fd2717;
+    border: none;
+    border-radius: 5px;
+    width: auto;
+    padding: 10px;
+    margin: 3% auto;
+}
+
+#select {
+    display: flex;
+    margin-top: 5%;
+    justify-content: center;
+    width: 90%;
+}
+
+#producto-container {
+    margin-top: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+#producto-container p {
+    margin-right: 1%;
+}
+
+#select p {
+    margin-left: 5%;
+    height: auto;
+    border-radius: 5px;
+}
+
+#select select {
+    margin-left: 5%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.select .perso {
     margin-left: 10%;
     height: auto;
     border-radius: 5px;
 }
 
-label{
+label {
     width: 50%;
     font-size: 30px;
     color: black;
 }
 
-input{  
+input {
     width: 40%;
     height: 30px;
     border: 1px solid #fd2717;
     color: black;
     border-radius: 5px;
 }
-a{
+
+a {
     color: white;
     background-color: #fd2717;
     text-decoration: none;
@@ -91,6 +138,7 @@ a{
     margin-left: auto;
     margin-right: auto;
 }
+
 .btn-enviar {
     justify-content: center;
     width: 20%;
@@ -99,36 +147,40 @@ a{
     margin-left: 40%;
     height: 40px;
     background-color: #fd2717;
-    color:white;
+    color: white;
     font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.btn-enviar:hover{ 
+.btn-enviar:hover {
     background-color: white;
     color: black;
     border: 2px solid #fd2717;
     border-radius: 5px;
 }
-.card-container{
+
+.card-container {
     width: 90%;
     margin-top: 3%;
     margin-left: auto;
     margin-right: auto;
 }
-.card{
+
+.card {
     margin: 10px;
     width: 18%;
 }
-.card img{
+
+.card img {
     justify-content: center;
     text-align: center;
     margin-left: auto;
     margin-right: auto;
     width: 100px;
 }
-.card-title{
+
+.card-title {
     justify-content: center;
     text-align: center;
     margin-left: auto;
@@ -136,24 +188,29 @@ a{
     border-top: 1px solid lightgray;
     font-size: 30px;
 }
-#price{
+
+#price {
     display: flex;
     justify-content: space-between;
     border-bottom: 1px solid lightgrey;
 }
-#stock{
+
+#stock {
     display: flex;
     justify-content: space-between;
 }
-.list-group-item{
+
+.list-group-item {
     border: none;
 }
-.card:hover{
-    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+
+.card:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     scale: 1.05;
     transition: 0.3s;
 }
-#h1Container{
+
+#h1Container {
     border-radius: 20px;
     border: 2px solid #fd2717;
     text-align: center;
@@ -164,4 +221,58 @@ a{
     width: 20%;
     color: #fd2717;
     animation: fadeIn 2s both;
+}
+
+#contador {
+    width: 30%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+#contador p {
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 5%;
+}
+
+#contador #numeros {
+    margin-top: 5%;
+    font-size: 120px;
+    color: white;
+    border-radius: 20px;
+    background-color: #fd2717;
+    justify-content: center;
+}
+
+#contador #btn {
+    padding: 40px;
+    font-size: 30px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 70px;
+    transition: transform 0.3s;
+}
+
+#contador #btn:hover {
+    transform: scale(1.2);
+}
+
+
+
+#contador #input-numero {
+    margin-left: 30%;
+}
+
+#contador #botones {
+    display: flex;
+}
+
+@media screen and (max-width: 800px) {
+    #contador {
+        width: 90%;
+    }
 }
