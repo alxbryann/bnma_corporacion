@@ -28,10 +28,37 @@
                 <button id="btn" onclick="agregarViaje()" style="background-color: green;">Agregar viaje</button>
                 <button id="btn" onclick="eliminarViaje()" style="background-color: orangered;">Eliminar viaje</button>
             </div>
-            <button>agregar entrada</button>
+
+            <button id="openModalBtn">Añadir entrada</button>
+
+            <div id="myModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <p>Agrega los detalles del producto</p>
+                    <label for="producto">Producto:</label>
+                    <input type="text" id="modal-producto" name="producto" required>
+                    <br>
+                    <label for="novedad">Novedad:</label>
+                    <input type="text" id="modal-novedad" name="novedad">
+                    <br>
+                    <button onclick="agregarEntrada()">Enviar</button>
+                </div>
+            </div>
+
         </div>
         <div id="entradas">
-            <p>PRODUCTOS RECIBIDOS:</p>
+            <table id="tabla">
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Novedad</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            <button id="terminar-recibida">Terminar recibida</button>
         </div>
     </div>
     <script src="/javascript/contador.js"></script>

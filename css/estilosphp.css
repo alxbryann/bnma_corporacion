@@ -223,11 +223,12 @@ a {
     animation: fadeIn 2s both;
 }
 
-.contador-container{
+.contador-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
     justify-content: center;
 }
+
 #contador {
     width: 70%;
     margin-left: 5%;
@@ -276,7 +277,7 @@ a {
     display: flex;
 }
 
-#contador #input-numero{
+#contador #input-numero {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
@@ -287,24 +288,108 @@ a {
     border: 1px solid #fd2717;
 }
 
-#entradas{
+#entradas {
     width: 80%;
     border: 2px solid #fd2717;
     border-radius: 20px;
     margin: 5%;
     margin-left: -10%;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+
+.modal-content {
+    border-radius: 20px;
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeOut {
+    from {opacity: 1;}
+    to {opacity: 0;}
+}
+
+.modal.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+.modal.hide {
+    animation: fadeOut 0.5s;
+}
+
+form{
+    padding: 10px;
+}
+
+#modal-producto, #modal-novedad{
+    width: 100%;
+}
+
+#tabla{
+    width: 100%;
+    margin-top: 5%;
+
+}
+
+#tabla tbody{
+    background-color: #FFF455;
+    text-align: center;
 }
 
 @media screen and (max-width: 800px) {
-    .contador-container{
+    .contador-container {
         display: flex;
         flex-direction: column;
     }
+
     #contador {
         width: 90%;
     }
-    #entradas{
+
+    #entradas {
         width: 90%;
         margin-left: 2%;
     }
