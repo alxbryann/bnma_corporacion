@@ -223,8 +223,13 @@ a {
     animation: fadeIn 2s both;
 }
 
+.contador-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    justify-content: center;
+}
 #contador {
-    width: 30%;
+    width: 70%;
     margin-left: 5%;
     margin-top: 2%;
 }
@@ -271,8 +276,36 @@ a {
     display: flex;
 }
 
+#contador #input-numero{
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    border: 1px solid #fd2717;
+}
+
+#entradas{
+    width: 80%;
+    border: 2px solid #fd2717;
+    border-radius: 20px;
+    margin: 5%;
+    margin-left: -10%;
+    padding: 10px;
+}
+
 @media screen and (max-width: 800px) {
+    .contador-container{
+        display: flex;
+        flex-direction: column;
+    }
     #contador {
         width: 90%;
+    }
+    #entradas{
+        width: 90%;
+        margin-left: 2%;
     }
 }

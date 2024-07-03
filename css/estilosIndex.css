@@ -112,7 +112,7 @@ ul {
 
 #gaseosa {
     border-radius: 20px;
-    width: 60%;
+    width: 80%;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -128,7 +128,9 @@ ul {
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-    animation: fromRight 1s linear both;
+    animation: fromRight 10s linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 20%;
 }
 
 #gaseosa:hover {
@@ -137,7 +139,7 @@ ul {
 
 #papeleria {
     border-radius: 20px;
-    width: 60%;
+    width: 80%;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
@@ -153,7 +155,9 @@ ul {
     align-items: center;
     justify-content: center;
     transition: 0.5s;
-    animation: fromLeft 1s linear both;
+    animation: fromLeft 10s linear both;
+    animation-timeline: view();
+    animation-range: entry 50% cover 20%;
 }
 
 #papeleria:hover {
@@ -193,7 +197,8 @@ footer a {
 
 @keyframes fromRight {
     0% {
-        transform: translateX(100%);
+        opacity: 0;
+        transform: translateX(10%);
     }
 
     100% {
@@ -203,7 +208,8 @@ footer a {
 
 @keyframes fromLeft {
     0% {
-        transform: translateX(-100%);
+        opacity: 0;
+        transform: translateX(-10%);
     }
 
     100% {

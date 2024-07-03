@@ -18,16 +18,21 @@
         <img src="/img/logo_blanco.png">
         <h1>CORPORACION BNMA</h1>
     </header>
-    <div id="contador">
-        <p>Cantidad por viaje</p>
-        <input type="number" id="input-numero" placeholder="Ingresa un numero">
-        <p>Mercancia ingresada:</p>
-        <p id="numeros">000</p>
-        <div id="botones">
-            <button id="btn" onclick="agregarViaje()" style="background-color: green;">Agregar viaje</button>
-            <button id="btn" onclick="eliminarViaje()" style="background-color: orangered;">Eliminar viaje</button>
+    <div class="contador-container">
+        <div id="contador">
+            <p>Cantidad por viaje</p>
+            <input type="number" id="input-numero" placeholder="Ingresa un numero">
+            <p>Mercancia ingresada:</p>
+            <p id="numeros">000</p>
+            <div id="botones">
+                <button id="btn" onclick="agregarViaje()" style="background-color: green;">Agregar viaje</button>
+                <button id="btn" onclick="eliminarViaje()" style="background-color: orangered;">Eliminar viaje</button>
+            </div>
+            <button>agregar entrada</button>
         </div>
-        <button>agregar entrada</button>
+        <div id="entradas">
+            <p>PRODUCTOS RECIBIDOS:</p>
+        </div>
     </div>
     <script src="/javascript/contador.js"></script>
 </body>
