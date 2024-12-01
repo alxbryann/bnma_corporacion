@@ -27,6 +27,7 @@
             <div id="botones">
                 <button id="btn" onclick="agregarViaje()" style="background-color: green;">Agregar viaje</button>
                 <button id="btn" onclick="eliminarViaje()" style="background-color: orangered;">Eliminar viaje</button>
+                <button id="btn" onclick="reiniciarContador()" style="background-color: rgb(4, 196, 255);">Reiniciar contador</button>
             </div>
 
             <button id="openModalBtn">Añadir entrada</button>
@@ -41,6 +42,13 @@
                     <label for="novedad">Novedad:</label>
                     <input type="text" id="modal-novedad" name="novedad">
                     <br>
+                    <label for="empresa">En qué empresa está ingresando:</label>
+                    <select id="modal-empresa" name="empresa">
+                        <option value="" disabled selected>Seleccione una empresa</option>
+                        <option value="Drinks 1">Drinks sede 1</option>
+                        <option value="Drinks 2">Drinks sede 2</option>
+                    </select>
+                    <br>
                     <button onclick="agregarEntrada()">Enviar</button>
                 </div>
             </div>
@@ -53,12 +61,15 @@
                         <th>Producto</th>
                         <th>Cantidad</th>
                         <th>Novedad</th>
+                        <th>Empresa</th>
+                        <th> </th>
                     </tr>
                 </thead>
                 <tbody>
                 </tbody>
             </table>
             <button id="terminar-recibida">Terminar recibida</button>
+        <button id="terminar-recibida" onclick="window.location.href='../php/terminar_recibida.php'">Terminar recibida</button>
         </div>
     </div>
     <script src="../javascript/contador.js"></script>

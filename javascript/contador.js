@@ -14,23 +14,40 @@ function agregarViaje() {
 }
 
 function eliminarViaje() {
-    if(!viajes<=0){
+    if (!viajes <= 0) {
         viajes -= numeroaSumar;
         numeroElement.textContent = viajes.toString().padStart(3, '0');
-    } 
+    }
+}
+
+function eliminarFila(row) {
+    var d = row.parentNode.parentNode.rowIndex;
+    document.getElementById('tabla').deleteRow(d);
+}
+
+function reiniciarContador() {
+    viajes = 0;
+    numeroElement.textContent = "000";
+    numeroaSumar = 0;
 }
 
 function agregarEntrada() {
     var inputProducto = document.getElementById('modal-producto');
     var inputNovedad = document.getElementById('modal-novedad');
+    var inputEmpresa = document.getElementById('modal-empresa');
+    var selectEmpresa = document.getElementById('modal-empresa');
+    var empresaSeleccionada = selectEmpresa.options[selectEmpresa.selectedIndex].value;
     var newRow = table.insertRow();
     var productoCell = newRow.insertCell(0);
     var cantidadCell = newRow.insertCell(1);
     var novedadCell = newRow.insertCell(2);
-    var eliminarCell = newRow.insertCell(3);
+    var empresaCell = newRow.insertCell(3);
+    var eliminarCell = newRow.insertCell(4);
     productoCell.textContent = inputProducto.value;
     cantidadCell.textContent = viajes;
     novedadCell.textContent = inputNovedad.value;
+    empresaCell.textContent = empresaSeleccionada;
+    eliminarCell.innerHTML = '<button onclick="eliminarFila(this)">Eliminar</button>';
     numeroElement.textContent = "000";
     viajes = 0;
     numeroaSumar = 0;
@@ -52,8 +69,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 var modal = document.getElementById("myModal");
 
-
 var btn = document.getElementById("openModalBtn");
+
+var terminarRecibida = document.getElementById("terminar-recibida");
 
 
 var span = document.getElementsByClassName("close")[0];
@@ -71,22 +89,25 @@ function hideModal() {
     modal.classList.add("hide");
     setTimeout(() => {
         modal.style.display = "none";
-    }, 500); 
+    }, 500);
 }
 
-
-btn.onclick = function() {
+btn.onclick = function () {
     showModal();
 }
 
 
-span.onclick = function() {
+span.onclick = function () {
     hideModal();
 }
 
 
-window.onclick = function(event) {
+window.onclick = function (event) {
     if (event.target == modal) {
         hideModal();
     }
+}
+
+terminarRecibida.onclick = function () {
+
 }
